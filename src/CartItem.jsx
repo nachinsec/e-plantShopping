@@ -7,7 +7,6 @@ const CartItem = ({ onContinueShopping }) => {
   const cartItems = useSelector(state => state.cart.items)
   const dispatch = useDispatch()
 
-  // Calcula el subtotal y total aquí o en una función auxiliar
   const calculateTotalCost = () => {
     return cartItems.reduce((total, item) => total + item.quantity * parseFloat(item.cost.replace('$', '')), 0)
   }
