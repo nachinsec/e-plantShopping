@@ -232,20 +232,22 @@ function ProductList(props) {
     }
   ]
   const styleObj = {
-    backgroundColor: '#615EFC',
+    backgroundColor: '#4CAF50',
     color: '#fff!important',
     padding: '15px',
     display: 'flex',
     justifyContent: 'space-between',
-    alignIems: 'center',
+    alignItems: 'center',
     fontSize: '20px',
   }
+
   const styleObjUl = {
     display: 'flex',
     justifyContent: 'space-between',
     alignItems: 'center',
     width: '1100px',
   }
+
   const styleA = {
     color: 'white',
     fontSize: '30px',
@@ -275,7 +277,7 @@ function ProductList(props) {
             <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
             <a style={{ textDecoration: 'none' }}>
               <div>
-                <h3 style={{ color: 'white' }}>Ziad's Plants</h3>
+                <h3 style={{ color: 'white' }}>Nachinsec's Plants</h3>
                 <i style={{ color: 'white' }}>Where Green Meets Serenity</i>
               </div>
             </a>
