@@ -11,6 +11,10 @@ const CartItem = ({ onContinueShopping }) => {
     return cart.reduce((total, item) => total + (item.quantity * parseFloat(item.cost.replace('$', ''))), 0).toFixed(2)
   }
 
+  const calculateTotalCost = (item) => {
+    return (item.quantity * parseFloat(item.cost.replace('$', ''))).toFixed(2)
+  }
+
   const handleContinueShopping = (e) => {
     e.preventDefault()
     onContinueShopping()
@@ -32,8 +36,12 @@ const CartItem = ({ onContinueShopping }) => {
     dispatch(removeItem(item.name))
   }
 
-  const calculateTotalCost = (item) => {
-    return (item.quantity * parseFloat(item.cost.replace('$', ''))).toFixed(2)
+  const handleCheckoutShopping = (e) => {
+    alert('Functionality to be added for future reference')
+  }
+
+  const calculateTotalQuantity = () => {
+    return cart.reduce((total, item) => total + item.quantity, 0)
   }
 
   return (
@@ -57,11 +65,13 @@ const CartItem = ({ onContinueShopping }) => {
           </div>
         ))}
       </div>
-      <div style={{ marginTop: '20px', color: 'black' }} className='total_cart_amount'></div>
+      <div style={{ marginTop: '20px', color: 'black' }}>
+        <div>Total Quantity: {calculateTotalQuantity()}</div>
+      </div>
       <div className="continue_shopping_btn">
         <button className="get-started-button" onClick={(e) => handleContinueShopping(e)}>Continue Shopping</button>
         <br />
-        <button className="get-started-button1">Checkout</button>
+        <button className="get-started-button1" onClick={(e) => handleCheckoutShopping(e)}>Checkout</button>
       </div>
     </div>
   )
